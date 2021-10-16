@@ -1,11 +1,36 @@
 import React from 'react'
 
-const Index = (): React.ReactElement => {
+import { Document } from '@prismicio/client/types/documents'
+import { GetStaticPropsResult } from 'next'
+
+import { getIndex } from '../libraries/prismic'
+
+import Layout from '../layout/Default'
+
+import ImageGrid, { ImageGridItem } from '../components/ImageGrid'
+
+interface Props {
+  documents: Document[]
+}
+
+const Index = ({ documents }: Props): React.ReactElement => {
   return (
-    <div>
-      <p>Hello World</p>
-    </div>
+    <Layout>
+      <ImageGrid>
+      { documents.map((document) => (
+        <ImageGridItem key={document.uid} document={document} />
+      )) }
+      </ImageGrid>
+    </Layout>
   )
 }
 
 export default Index
+export async function getStaticProps (): Promise<GetStaticPropsResult<Props>> {
+  const documents = await getIndex()
+  return {
+    props: {
+      documents
+    }
+  }
+}
