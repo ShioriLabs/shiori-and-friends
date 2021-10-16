@@ -1,7 +1,7 @@
 {
-  "name": "preflightx",
+  "name": "shiori-and-friends",
   "version": "1.0.0",
-  "description": "Common React project scaffolding",
+  "description": "Shiori & Friends",
   "scripts": {
     "test": "eslint src/**/*.{ts,tsx} --fix",
     "build": "next build",
@@ -11,14 +11,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ShioriLabs/preflightx.git"
+    "url": "git+https://github.com/ShioriLabs/shiori-and-friends.git"
   },
   "author": "",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ShioriLabs/preflightx/issues"
+    "url": "https://github.com/ShioriLabs/shiori-and-friends/issues"
   },
-  "homepage": "https://github.com/ShioriLabs/preflightx#readme",
+  "homepage": "https://github.com/ShioriLabs/shiori-and-friends#readme",
   "dependencies": {
     "@prismicio/client": "^5.1.0",
     "babel-plugin-styled-components": "^1.12.0",
