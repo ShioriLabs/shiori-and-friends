@@ -45,14 +45,14 @@ const ItemThumbnail = styled.img`
 `
 
 const ItemDetail = styled.article`
-  padding: 72px 16px 24px;
+  padding: 96px 16px 24px;
   box-sizing: border-box;
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;
   position: absolute;
   bottom: 0px;
   width: 100%;
-  background: linear-gradient(0deg, #2d2d2dad, transparent);
+  background: linear-gradient(0deg, #313131b8, transparent);
   color: ${(props) => props.theme.colors.white};
 `
 
@@ -73,7 +73,12 @@ interface Props {
 const ImageGridItem = ({ document }: Props): React.ReactElement => {
   return (
     <ItemBase>
-      <ItemThumbnail src={document.data.images[0].image.url} />
+      <ItemThumbnail
+        src={document.data.images[0].image.url}
+        width={document.data.images[0].image.dimensions.width}
+        height={document.data.images[0].image.dimensions.height}
+        alt={`Gambar ${RichText.asText(document.data.title)}, oleh ${document.data.author_name}`}
+      />
       <ItemDetail>
         <ItemTitle>{RichText.asText(document.data.title)}</ItemTitle>
         oleh <ItemAuthor rel="author">{document.data.author_name}</ItemAuthor>
