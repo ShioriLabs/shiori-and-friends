@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Document } from '@prismicio/client/types/documents'
+import { PrismicDocument } from '@prismicio/client'
 import { GetStaticPropsResult } from 'next'
 
 import { getIndex } from '../libraries/prismic'
@@ -10,7 +10,7 @@ import Layout from '../layout/Default'
 import ImageGrid, { ImageGridItem } from '../components/ImageGrid'
 
 interface Props {
-  documents: Document[]
+  documents: PrismicDocument[]
 }
 
 const Index = ({ documents }: Props): React.ReactElement => {

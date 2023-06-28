@@ -1,7 +1,7 @@
 import React from 'react'
 
-import { Document } from '@prismicio/client/types/documents'
-import { RichText } from 'prismic-reactjs'
+import { PrismicDocument } from '@prismicio/client'
+import { PrismicText } from '@prismicio/react'
 import styled from 'styled-components'
 
 const ImageGrid = styled.div`
@@ -67,7 +67,7 @@ const ItemAuthor = styled.a`
 `
 
 interface Props {
-  document: Document
+  document: PrismicDocument
 }
 
 const ImageGridItem = ({ document }: Props): React.ReactElement => {
@@ -80,7 +80,9 @@ const ImageGridItem = ({ document }: Props): React.ReactElement => {
         alt={`Gambar ${RichText.asText(document.data.title)}, oleh ${document.data.author_name}`}
       />
       <ItemDetail>
-        <ItemTitle>{RichText.asText(document.data.title)}</ItemTitle>
+        <ItemTitle>
+          <PrismicText field={document.data.title} />
+        </ItemTitle>
         oleh <ItemAuthor rel="author">{document.data.author_name}</ItemAuthor>
       </ItemDetail>
     </ItemBase>
