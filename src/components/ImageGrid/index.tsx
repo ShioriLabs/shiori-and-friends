@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { PrismicDocument } from '@prismicio/types'
+import { PrismicDocument } from '@prismicio/client'
 import { PrismicText } from '@prismicio/react'
 import styled from 'styled-components'
 
