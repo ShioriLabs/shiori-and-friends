@@ -17,9 +17,9 @@ const Index = ({ documents }: Props): React.ReactElement => {
   return (
     <Layout>
       <ImageGrid>
-      { documents.map((document) => (
-        <ImageGridItem key={document.uid} document={document} />
-      )) }
+        { documents.map((document) => (
+          <ImageGridItem key={document.uid} document={document} />
+        )) }
       </ImageGrid>
     </Layout>
   )
