@@ -3,7 +3,7 @@ import Head from 'next/head'
 import { ThemeProvider, createGlobalStyle } from 'styled-components'
 import { AppProps } from 'next/dist/shared/lib/router/router'
 
-import 'normalize.css'
+import 'modern-normalize'
 
 import Theme from '../themes/default'
 
