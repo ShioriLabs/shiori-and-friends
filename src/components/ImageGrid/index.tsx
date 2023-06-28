@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Document } from '@prismicio/client/types/documents'
+import { PrismicDocument } from '@prismicio/types'
 import { RichText } from 'prismic-reactjs'
 import styled from 'styled-components'
 
@@ -67,7 +67,7 @@ const ItemAuthor = styled.a`
 `
 
 interface Props {
-  document: Document
+  document: PrismicDocument
 }
 
 const ImageGridItem = ({ document }: Props): React.ReactElement => {

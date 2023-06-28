@@ -1,10 +1,11 @@
-import prismic from '@prismicio/client'
-import { Document } from '@prismicio/client/types/documents'
+import { createClient, predicate } from '@prismicio/client'
+import { PrismicDocument } from '@prismicio/types'
 
-const client = prismic.client('https://shiori-and-friends.cdn.prismic.io/api/v2')
+const client = createClient('https://shiori-and-friends.cdn.prismic.io/api/v2')
 
-const getIndex = async (): Promise<Document[]> => {
-  const response = await client.query(prismic.predicates.at('document.type', 'image'))
+const getIndex = async (): Promise<PrismicDocument[]> => {
+  // const response = await client.query(predicate.at('document.type', 'image'))
+  const response = await client.get({ predicates: predicate.at('document.type', 'image') })
   return response.results
 }
 
